@@ -4,98 +4,98 @@ function Comp() {
   return (
     <div>
       <nav>
-        <div class="logo-name">
-          <div class="logo-image">
+        <div ClassName="logo-name">
+          <div ClassName="logo-image">
             <img src="images/logo.png" alt=""></img>
           </div>
 
-          <span class="logo_name">CodingLab</span>
+          <span ClassName="logo_name">CodingLab</span>
         </div>
 
-        <div class="menu-items">
-          <ul class="nav-links">
+        <div ClassName="menu-items">
+          <ul ClassName="nav-links">
             <li>
               <a href="#">
-                <i class="uil uil-estate"></i>
-                <span class="link-name">Dahsboard</span>
+                <i ClassName="uil uil-estate"></i>
+                <span ClassName="link-name">Dahsboard</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <i class="uil uil-files-landscapes"></i>
-                <span class="link-name">Content</span>
+                <i ClassName="uil uil-files-landscapes"></i>
+                <span ClassName="link-name">Content</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <i class="uil uil-chart"></i>
-                <span class="link-name">Analytics</span>
+                <i ClassName="uil uil-chart"></i>
+                <span ClassName="link-name">Analytics</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <i class="uil uil-thumbs-up"></i>
-                <span class="link-name">Like</span>
+                <i ClassName="uil uil-thumbs-up"></i>
+                <span ClassName="link-name">Like</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <i class="uil uil-comments"></i>
-                <span class="link-name">Comment</span>
+                <i ClassName="uil uil-comments"></i>
+                <span ClassName="link-name">Comment</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <i class="uil uil-share"></i>
-                <span class="link-name">Share</span>
+                <i ClassName="uil uil-share"></i>
+                <span ClassName="link-name">Share</span>
               </a>
             </li>
           </ul>
 
-          <ul class="logout-mode">
+          <ul ClassName="logout-mode">
             <li>
               <a href="#">
-                <i class="uil uil-signout"></i>
-                <span class="link-name">Logout</span>
+                <i ClassName="uil uil-signout"></i>
+                <span ClassName="link-name">Logout</span>
               </a>
             </li>
 
-            <li class="mode">
+            <li ClassName="mode">
               <a href="#">
-                <i class="uil uil-moon"></i>
-                <span class="link-name">Dark Mode</span>
+                <i ClassName="uil uil-moon"></i>
+                <span ClassName="link-name">Dark Mode</span>
               </a>
 
-              <div class="mode-toggle">
-                <span class="switch"></span>
+              <div ClassName="mode-toggle">
+                <span ClassName="switch"></span>
               </div>
             </li>
           </ul>
         </div>
       </nav>
 
-      <section class="dashboard">
-        <div class="top">
-          <i class="uil uil-bars sidebar-toggle"></i>
+      <section ClassName="dashboard">
+        <div ClassName="top">
+          <i ClassName="uil uil-bars sidebar-toggle"></i>
 
-          <div class="search-box">
-            <i class="uil uil-search"></i>
+          <div ClassName="search-box">
+            <i ClassName="uil uil-search"></i>
             <input type="text" placeholder="Search here..."></input>
           </div>
 
           <img src="images/profile.jpg" alt=""></img>
         </div>
-        <div class="dash-content">
-          <div class="overview">
-            <div class="title">
-              <i class="uil uil-list-ui-alt"></i>
-              <span class="text">List of Historique</span>
+        <div ClassName="dash-content">
+          <div ClassName="overview">
+            <div ClassName="title">
+              <i ClassName="uil uil-list-ui-alt"></i>
+              <span ClassName="text">List of Historique</span>
             </div>
 
-            <div class="boxes">
-              <div class="box box1">
-                <div class="box1">
-                  <table class="content-table">
+            <div ClassName="boxes">
+              <div ClassName="box box1">
+                <div ClassName="box1">
+                  <table ClassName="content-table">
                     <thead>
                       <tr>
                         <th>Rank</th>
@@ -113,10 +113,10 @@ function Comp() {
                         <td>88,110</td>
                         <td>dcode</td>
                         <td>
-                          <i class="uil uil-user-check"></i>
+                          <i ClassName="uil uil-user-check"></i>
                         </td>
                         <td>
-                          <i class="uil uil-times-circle"></i>
+                          <i ClassName="uil uil-times-circle"></i>
                         </td>
                       </tr>
                       <tr>
@@ -125,10 +125,10 @@ function Comp() {
                         <td>72,400</td>
                         <td>Students</td>
                         <td>
-                          <i class="uil uil-user-check"></i>
+                          <i ClassName="uil uil-user-check"></i>
                         </td>
                         <td>
-                          <i class="uil uil-times-circle"></i>
+                          <i ClassName="uil uil-times-circle"></i>
                         </td>
                       </tr>
                       <tr>
@@ -137,10 +137,10 @@ function Comp() {
                         <td>52,300</td>
                         <td>dcode</td>
                         <td>
-                          <i class="uil uil-user-check"></i>
+                          <i ClassName="uil uil-user-check"></i>
                         </td>
                         <td>
-                          <i class="uil uil-times-circle"></i>
+                          <i ClassName="uil uil-times-circle"></i>
                         </td>
                       </tr>
                     </tbody>
