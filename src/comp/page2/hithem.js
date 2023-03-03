@@ -1,20 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./pageadmin.css";
-import "./hithem.js";
+import "./list.css";
 import { useEffect } from "react";
 function Hithem() {
-  // useEffect(() => {
-  //   const script = document.createElement("script");
-  //   // const url = "./list.js";
-  //   script.src = "./list.js";
-  //   script.async = true;
+  const [pop, setpop] = useState(false);
 
-  //   document.body.appendChild(script);
-
-  //   return () => {
-  //     document.body.removeChild(script);
-  //   };
-  // }, []);
   return (
     <div>
       <nav>
@@ -79,128 +69,140 @@ function Hithem() {
 
         <div class="dash-content">
           <div class="overview">
-            <div id="fullscreen-div"></div>
-            <form class="modal" id="modal">
-              <div class="modal-content">
-                <div class="modal-head">
-                  <h3 id="modal-title">Add Address</h3>
-                  <button type="button" id="close-btn">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-                <div class="modal-main">
-                  <div class="modal-row">
-                    <div class="modal-col">
-                      <label for="">How should your mail be addressed?</label>
-                      <input
-                        type="text"
-                        placeholder="E.g. The Smith Family"
-                        class="form-control"
-                        name="addr_ing_name"
-                      ></input>
+            {/* <div id="fullscreen-div"></div> */}
+            {pop ? (
+              <div id="fullscreen-div">
+                <form className="pop" id="modal">
+                  <div className="modal-content">
+                    <div className="modal-head">
+                      <h3 id="modal-title">Add Address</h3>
+                      <button
+                        type="button"
+                        id="close-btn"
+                        onClick={() => {
+                          setpop(false);
+                        }}
+                      >
+                        <i class="fas fa-times"></i>
+                      </button>
                     </div>
-                  </div>
+                    <div className="modal-main">
+                      <div class="modal-row">
+                        <div class="modal-col">
+                          <label for="">
+                            How should your mail be addressed?
+                          </label>
+                          <input
+                            type="text"
+                            placeholder="E.g. The Smith Family"
+                            class="form-control"
+                            name="addr_ing_name"
+                          ></input>
+                        </div>
+                      </div>
 
-                  <div class="modal-row grid-row">
-                    <div class="modal-col">
-                      <label for="">First Name</label>
-                      <input
-                        type="text"
-                        placeholder="The first name"
-                        class="form-control"
-                        name="first_name"
-                      ></input>
-                    </div>
-                    <div class="modal-col">
-                      <label for="">Last Name</label>
-                      <input
-                        type="text"
-                        placeholder="The last name"
-                        class="form-control"
-                        name="last_name"
-                      ></input>
-                    </div>
-                  </div>
+                      <div class="modal-row grid-row">
+                        <div class="modal-col">
+                          <label for="">First Name</label>
+                          <input
+                            type="text"
+                            placeholder="The first name"
+                            class="form-control"
+                            name="first_name"
+                          ></input>
+                        </div>
+                        <div class="modal-col">
+                          <label for="">Last Name</label>
+                          <input
+                            type="text"
+                            placeholder="The last name"
+                            class="form-control"
+                            name="last_name"
+                          ></input>
+                        </div>
+                      </div>
 
-                  <div class="modal-row grid-row">
-                    <div class="modal-col">
-                      <label for="">Email</label>
-                      <input
-                        type="email"
-                        placeholder="The email"
-                        class="form-control"
-                        name="email"
-                      ></input>
-                    </div>
-                    <div class="modal-col">
-                      <label for="">Phone</label>
-                      <input
-                        type="text"
-                        placeholder="The phone number"
-                        class="form-control"
-                        name="phone"
-                      ></input>
-                    </div>
-                  </div>
+                      <div class="modal-row grid-row">
+                        <div class="modal-col">
+                          <label for="">Email</label>
+                          <input
+                            type="email"
+                            placeholder="The email"
+                            class="form-control"
+                            name="email"
+                          ></input>
+                        </div>
+                        <div class="modal-col">
+                          <label for="">Phone</label>
+                          <input
+                            type="text"
+                            placeholder="The phone number"
+                            class="form-control"
+                            name="phone"
+                          ></input>
+                        </div>
+                      </div>
 
-                  <div class="modal-row grid-row">
-                    <div class="modal-col">
-                      <label for="">Street address</label>
-                      <input
-                        type="text"
-                        placeholder="Street address, apartment, house number, etc."
-                        class="form-control"
-                        name="street_addr"
-                      ></input>
-                    </div>
-                    <div class="modal-col">
-                      <label for="">Postal Code</label>
-                      <input
-                        type="text"
-                        placeholder="60323"
-                        class="form-control"
-                        name="postal_code"
-                      ></input>
-                    </div>
-                  </div>
+                      <div class="modal-row grid-row">
+                        <div class="modal-col">
+                          <label for="">Street address</label>
+                          <input
+                            type="text"
+                            placeholder="Street address, apartment, house number, etc."
+                            class="form-control"
+                            name="street_addr"
+                          ></input>
+                        </div>
+                        <div class="modal-col">
+                          <label for="">Postal Code</label>
+                          <input
+                            type="text"
+                            placeholder="60323"
+                            class="form-control"
+                            name="postal_code"
+                          ></input>
+                        </div>
+                      </div>
 
-                  <div class="modal-row grid-row">
-                    <div class="modal-col">
-                      <label for="">City</label>
-                      <input
-                        type="text"
-                        placeholder="City name"
-                        class="form-control"
-                        name="city"
-                      ></input>
-                    </div>
-                    <div class="modal-col">
-                      <label for="">Country</label>
-                      <select id="country-list" name="country">
-                        <option>USA</option>
-                      </select>
-                    </div>
-                  </div>
+                      <div class="modal-row grid-row">
+                        <div class="modal-col">
+                          <label for="">City</label>
+                          <input
+                            type="text"
+                            placeholder="City name"
+                            class="form-control"
+                            name="city"
+                          ></input>
+                        </div>
+                        <div class="modal-col">
+                          <label for="">Country</label>
+                          <select id="country-list" name="country">
+                            <option>USA</option>
+                          </select>
+                        </div>
+                      </div>
 
-                  <div class="modal-row">
-                    <div class="modal-col">
-                      <label for="">Labels</label>
-                      <select name="labels">
-                        <option value="Family">Family</option>
-                        <option value="Friends">Friends</option>
-                        <option value="Colleagues">Colleagues</option>
-                      </select>
+                      <div class="modal-row">
+                        <div class="modal-col">
+                          <label for="">Labels</label>
+                          <select name="labels">
+                            <option value="Family">Family</option>
+                            <option value="Friends">Friends</option>
+                            <option value="Colleagues">Colleagues</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="modal-row" id="modal-btns">
+                        <button type="submit" id="save-btn">
+                          Save
+                        </button>
+                      </div>
                     </div>
                   </div>
-
-                  <div class="modal-row" id="modal-btns">
-                    <button type="submit" id="save-btn">
-                      Save
-                    </button>
-                  </div>
-                </div>
+                </form>
               </div>
-            </form>
+            ) : null}
 
             <div class="addr-book" id="addr-book">
               <div class="addr-book-content">
@@ -212,7 +214,14 @@ function Hithem() {
                 </div>
 
                 <div class="addr-book-top">
-                  <button type="button" class="btn" id="add-btn">
+                  <button
+                    type="button"
+                    class="btn"
+                    id="add-btn"
+                    onClick={() => {
+                      setpop(true);
+                    }}
+                  >
                     <span>
                       <i class="fas fa-plus"></i> Add address
                     </span>

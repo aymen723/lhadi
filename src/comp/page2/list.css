@@ -44,7 +44,7 @@ button {
   width: 100%;
   height: 100%;
   z-index: 1;
-  display: none;
+  /* display: none; */
 }
 .modal {
   background-color: #fff;
@@ -282,4 +282,22 @@ button {
 /* for error message */
 .errorMsg {
   border: 1px solid #d33c41 !important;
+}
+
+.pop {
+  /* border: 1px solid red; */
+  width: fit-content;
+  background-color: #fff;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  /* display: none; */
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
