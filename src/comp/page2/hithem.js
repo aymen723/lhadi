@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./pageadmin.css";
 import "./list.css";
+import countery from "./counteries.json";
 import { useEffect } from "react";
 function Hithem() {
   const [pop, setpop] = useState(false);
@@ -16,6 +17,11 @@ function Hithem() {
   const [country, setcountry] = useState();
   const [labels, setlabels] = useState();
 
+  function postdata() {
+    // lhadi ani hna drtlk bash tba3t les donne w axios ao 7aito deja w variables am ml foga
+
+    const address = {};
+  }
   return (
     <div>
       <nav>
@@ -226,9 +232,27 @@ function Hithem() {
                           ></input>
                         </div>
                         <div className="modal-col">
-                          <label for="">Country</label>
-                          <select id="country-list" name="country">
-                            <option>USA</option>
+                          <label>Country</label>
+                          <select
+                            defaultValue={country}
+                            onChange={(e) => {
+                              setcountry(e.target.value);
+                              console.log(e.target.value);
+                            }}
+                            id="country-list"
+                            name="country"
+                          >
+                            {/* <option>USA</option> */}
+                            {countery ? (
+                              countery.map((each, index) => {
+                                return <option key={index}>{each.name}</option>;
+                              })
+                            ) : (
+                              <option>USA</option>
+                            )}
+                            {/* {countery.map((each, index) => {
+                              <option key={index}>{each.name}</option>;
+                            })} */}
                           </select>
                         </div>
                       </div>
@@ -238,7 +262,10 @@ function Hithem() {
                           <label>Labels</label>
                           <select
                             defaultValue={labels} // ...force the select's value to match the state variable...
-                            onChange={(e) => setlabels(e.target.value)}
+                            onChange={(e) => {
+                              setlabels(e.target.value);
+                              console.log(e.target.value);
+                            }}
                             name="labels"
                           >
                             <option value={"Family"}>Family</option>
