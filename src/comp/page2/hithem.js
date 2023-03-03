@@ -4,71 +4,82 @@ import "./list.css";
 import { useEffect } from "react";
 function Hithem() {
   const [pop, setpop] = useState(false);
+  const [fname, setfname] = useState();
+  const [fam, setfam] = useState();
+
+  const [lname, setlname] = useState();
+  const [email, setemail] = useState();
+  const [phone, setphone] = useState();
+  const [streetad, setstreetad] = useState();
+  const [pcode, setpcode] = useState();
+  const [city, setcity] = useState();
+  const [country, setcountry] = useState();
+  const [labels, setlabels] = useState();
 
   return (
     <div>
       <nav>
-        <div class="logo-name">
-          <div class="logo-image">
+        <div className="logo-name">
+          <div className="logo-image">
             <img src="images/logo.png" alt=""></img>
           </div>
 
-          <span class="logo_name">SNC BLS</span>
+          <span className="logo_name">SNC BLS</span>
         </div>
 
-        <div class="menu-items">
-          <ul class="nav-links">
+        <div className="menu-items">
+          <ul className="nav-links">
             <li>
               <a href="#">
-                <i class="uil uil-estate"></i>
-                <span class="link-name">Dahsboard</span>
+                <i className="uil uil-estate"></i>
+                <span className="link-name">Dahsboard</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <i class="uil uil-files-landscapes"></i>
-                <span class="link-name">listeA</span>
+                <i className="uil uil-files-landscapes"></i>
+                <span className="link-name">listeA</span>
               </a>
             </li>
             <li>
               <a href="#">
-                <i class="uil uil-chart"></i>
-                <span class="link-name">listb</span>
+                <i className="uil uil-chart"></i>
+                <span className="link-name">listb</span>
               </a>
             </li>
           </ul>
 
-          <ul class="logout-mode">
+          <ul className="logout-mode">
             <li>
               <a href="#">
-                <i class="uil uil-signout"></i>
-                <span class="link-name">Logout</span>
+                <i className="uil uil-signout"></i>
+                <span className="link-name">Logout</span>
               </a>
             </li>
 
-            <li class="mode">
+            <li className="mode">
               <a href="#">
-                <i class="uil uil-moon"></i>
-                <span class="link-name">Dark Mode</span>
+                <i className="uil uil-moon"></i>
+                <span className="link-name">Dark Mode</span>
               </a>
 
-              <div class="mode-toggle">
-                <span class="switch"></span>
+              <div className="mode-toggle">
+                <span className="switch"></span>
               </div>
             </li>
           </ul>
         </div>
       </nav>
 
-      <section class="dashboard">
-        <div class="top">
-          <i class="uil uil-bars sidebar-toggle"></i>
+      <section className="dashboard">
+        <div className="top">
+          <i className="uil uil-bars sidebar-toggle"></i>
 
           <img src="images/profile.jpg" alt=""></img>
         </div>
 
-        <div class="dash-content">
-          <div class="overview">
+        <div className="dash-content">
+          <div className="overview">
             {/* <div id="fullscreen-div"></div> */}
             {pop ? (
               <div id="fullscreen-div">
@@ -83,98 +94,138 @@ function Hithem() {
                           setpop(false);
                         }}
                       >
-                        <i class="fas fa-times"></i>
+                        <i className="fas fa-times"></i>
                       </button>
                     </div>
                     <div className="modal-main">
-                      <div class="modal-row">
-                        <div class="modal-col">
+                      <div className="modal-row">
+                        <div className="modal-col">
                           <label for="">
                             How should your mail be addressed?
                           </label>
                           <input
                             type="text"
                             placeholder="E.g. The Smith Family"
-                            class="form-control"
+                            className="form-control"
                             name="addr_ing_name"
+                            defaultValue={fam}
+                            onChange={(e) => {
+                              setfam(e.target.value);
+                              console.log(e.target.value);
+                            }}
                           ></input>
                         </div>
                       </div>
 
-                      <div class="modal-row grid-row">
-                        <div class="modal-col">
+                      <div className="modal-row grid-row">
+                        <div className="modal-col">
                           <label for="">First Name</label>
                           <input
                             type="text"
                             placeholder="The first name"
-                            class="form-control"
+                            className="form-control"
                             name="first_name"
+                            defaultValue={fname}
+                            onChange={(e) => {
+                              setfname(e.target.value);
+                              console.log(e.target.value);
+                            }}
                           ></input>
                         </div>
-                        <div class="modal-col">
-                          <label for="">Last Name</label>
+                        <div className="modal-col">
+                          <label htmlFor="">Last Name</label>
                           <input
                             type="text"
                             placeholder="The last name"
-                            class="form-control"
+                            className="form-control"
                             name="last_name"
+                            defaultValue={lname}
+                            onChange={(e) => {
+                              setlname(e.target.value);
+                              console.log(e.target.value);
+                            }}
                           ></input>
                         </div>
                       </div>
 
-                      <div class="modal-row grid-row">
-                        <div class="modal-col">
+                      <div className="modal-row grid-row">
+                        <div className="modal-col">
                           <label for="">Email</label>
                           <input
                             type="email"
                             placeholder="The email"
-                            class="form-control"
+                            className="form-control"
                             name="email"
+                            defaultValue={email}
+                            onChange={(e) => {
+                              setemail(e.target.value);
+                              console.log(e.target.value);
+                            }}
                           ></input>
                         </div>
-                        <div class="modal-col">
+                        <div className="modal-col">
                           <label for="">Phone</label>
                           <input
                             type="text"
                             placeholder="The phone number"
-                            class="form-control"
+                            className="form-control"
                             name="phone"
+                            defaultValue={phone}
+                            onChange={(e) => {
+                              setphone(e.target.value);
+                              console.log(e.target.value);
+                            }}
                           ></input>
                         </div>
                       </div>
 
-                      <div class="modal-row grid-row">
-                        <div class="modal-col">
+                      <div className="modal-row grid-row">
+                        <div className="modal-col">
                           <label for="">Street address</label>
                           <input
                             type="text"
                             placeholder="Street address, apartment, house number, etc."
-                            class="form-control"
+                            className="form-control"
                             name="street_addr"
+                            defaultValue={streetad}
+                            onChange={(e) => {
+                              setstreetad(e.target.value);
+                              console.log(e.target.value);
+                            }}
                           ></input>
                         </div>
-                        <div class="modal-col">
+                        <div className="modal-col">
                           <label for="">Postal Code</label>
                           <input
                             type="text"
                             placeholder="60323"
-                            class="form-control"
+                            className="form-control"
                             name="postal_code"
+                            defaultValue={pcode}
+                            onChange={(e) => {
+                              setpcode(e.target.value);
+                              console.log(e.target.value);
+                            }}
                           ></input>
                         </div>
                       </div>
 
-                      <div class="modal-row grid-row">
-                        <div class="modal-col">
+                      <div className="modal-row grid-row">
+                        <div className="modal-col">
                           <label for="">City</label>
                           <input
                             type="text"
                             placeholder="City name"
-                            class="form-control"
+                            className="form-control"
                             name="city"
+                            defaultValue={city}
+                            onChange={(e) => {
+                              setcity(e.target.value);
+                              console.log(e.target.value);
+                            }}
                           ></input>
                         </div>
-                        <div class="modal-col">
+                        <div className="modal-col">
                           <label for="">Country</label>
                           <select id="country-list" name="country">
                             <option>USA</option>
@@ -182,18 +233,22 @@ function Hithem() {
                         </div>
                       </div>
 
-                      <div class="modal-row">
-                        <div class="modal-col">
-                          <label for="">Labels</label>
-                          <select name="labels">
-                            <option value="Family">Family</option>
-                            <option value="Friends">Friends</option>
-                            <option value="Colleagues">Colleagues</option>
+                      <div className="modal-row">
+                        <div className="modal-col">
+                          <label>Labels</label>
+                          <select
+                            defaultValue={labels} // ...force the select's value to match the state variable...
+                            onChange={(e) => setlabels(e.target.value)}
+                            name="labels"
+                          >
+                            <option value={"Family"}>Family</option>
+                            <option value={"Friends"}>Friends</option>
+                            <option value={"Colleagues"}>Colleagues</option>
                           </select>
                         </div>
                       </div>
 
-                      <div class="modal-row" id="modal-btns">
+                      <div className="modal-row" id="modal-btns">
                         <button type="submit" id="save-btn">
                           Save
                         </button>
@@ -204,32 +259,32 @@ function Hithem() {
               </div>
             ) : null}
 
-            <div class="addr-book" id="addr-book">
-              <div class="addr-book-content">
-                <div class="addr-book-head">
-                  <i class="fa-solid fa-address-book fa-2x"></i>
+            <div className="addr-book" id="addr-book">
+              <div className="addr-book-content">
+                <div className="addr-book-head">
+                  <i className="fa-solid fa-address-book fa-2x"></i>
                   <h2>
                     Address<span>Book</span>
                   </h2>
                 </div>
 
-                <div class="addr-book-top">
+                <div className="addr-book-top">
                   <button
                     type="button"
-                    class="btn"
+                    className="btn"
                     id="add-btn"
                     onClick={() => {
                       setpop(true);
                     }}
                   >
                     <span>
-                      <i class="fas fa-plus"></i> Add address
+                      <i className="fas fa-plus"></i> Add address
                     </span>
                   </button>
                 </div>
 
-                <div class="addr-book-list" id="addr-book-list">
-                  <table class="addr-table">
+                <div className="addr-book-list" id="addr-book-list">
+                  <table className="addr-table">
                     <thead>
                       <tr>
                         <th>ID</th>
@@ -243,9 +298,9 @@ function Hithem() {
                       <tr>
                         <td>1</td>
                         <td>
-                          <span class="addressing-name">Smith Family</span>
+                          <span className="addressing-name">Smith Family</span>
                           {/* <br> */}
-                          <span class="address">
+                          <span className="address">
                             Johnson Street - 5668, Lake side
                           </span>
                         </td>
