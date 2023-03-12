@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import "./pageadmin.css";
-import "./list.css";
+import Container from "../container/container";
 import countery from "./counteries.json";
 import { useEffect } from "react";
+import axios from "axios";
+import "./list.css";
 function Hithem() {
   const [pop, setpop] = useState(false);
   const [fname, setfname] = useState();
@@ -16,67 +17,26 @@ function Hithem() {
   const [city, setcity] = useState();
   const [country, setcountry] = useState();
   const [labels, setlabels] = useState();
-
+  const [res, setres] = useState();
+  const [table, settable] = useState();
+  // this function is to send address to the backend server just change the url
   function postdata() {
-    // lhadi ani hna drtlk bash tba3t les donne w axios ao 7aito deja w variables am ml foga
-
     const address = {};
+
+    axios.post(`https://Url`, { address }).then((res) => {
+      console.log(res.data);
+      setres(res.data);
+    });
+  }
+  // this function is to fetch information for the table
+  function getdata() {
+    axios.get(`https://Url`).then((res) => {
+      console.log(res.data);
+      settable(res.data);
+    });
   }
   return (
-    <div>
-      <nav>
-        <div className="logo-name">
-          <div className="logo-image">
-            <img src="images/logo.png" alt=""></img>
-          </div>
-
-          <span className="logo_name">SNC BLS</span>
-        </div>
-
-        <div className="menu-items">
-          <ul className="nav-links">
-            <li>
-              <a href="#">
-                <i className="uil uil-estate"></i>
-                <span className="link-name">Dahsboard</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i className="uil uil-files-landscapes"></i>
-                <span className="link-name">listeA</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i className="uil uil-chart"></i>
-                <span className="link-name">listb</span>
-              </a>
-            </li>
-          </ul>
-
-          <ul className="logout-mode">
-            <li>
-              <a href="#">
-                <i className="uil uil-signout"></i>
-                <span className="link-name">Logout</span>
-              </a>
-            </li>
-
-            <li className="mode">
-              <a href="#">
-                <i className="uil uil-moon"></i>
-                <span className="link-name">Dark Mode</span>
-              </a>
-
-              <div className="mode-toggle">
-                <span className="switch"></span>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
+    <Container>
       <section className="dashboard">
         <div className="top">
           <i className="uil uil-bars sidebar-toggle"></i>
@@ -276,7 +236,13 @@ function Hithem() {
                       </div>
 
                       <div className="modal-row" id="modal-btns">
-                        <button type="submit" id="save-btn">
+                        <button
+                          type="submit"
+                          onClick={() => {
+                            postdata();
+                          }}
+                          id="save-btn"
+                        >
                           Save
                         </button>
                       </div>
@@ -322,21 +288,29 @@ function Hithem() {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>
-                          <span className="addressing-name">Smith Family</span>
-                          {/* <br> */}
-                          <span className="address">
-                            Johnson Street - 5668, Lake side
-                          </span>
-                        </td>
-                        <td>
-                          <span>Colleagues</span>
-                        </td>
-                        <td>Mark Smith</td>
-                        <td>123-456-7890</td>
-                      </tr>
+                      {table
+                        ? true(
+                            <tr>
+                              <td>{table.id}</td>
+                              <td>
+                                <span className="addressing-name">
+                                  {table.address}
+                                </span>
+                                {/* <br> */}
+                                <span className="address">
+                                  {/* Johnson Street - 5668, Lake side */}
+                                  {table.address}
+                                </span>
+                              </td>
+                              <td>
+                                <span>Colleagues</span>
+                                <span>{table.Labels}</span>
+                              </td>
+                              <td>{table.name}</td>
+                              <td>{table.phone}</td>
+                            </tr>
+                          )
+                        : null}
                     </tbody>
                   </table>
                 </div>
@@ -345,7 +319,7 @@ function Hithem() {
           </div>
         </div>
       </section>
-    </div>
+    </Container>
   );
 }
 

@@ -16,7 +16,8 @@
 body {
   font-family: "Nunito", sans-serif;
   min-height: 100vh;
-  background-color: var(--light-grey-color);
+  /* */
+  /* background-color: var(--light-grey-color); */
 }
 h1,
 h2,
@@ -54,6 +55,7 @@ button {
   position: fixed;
   top: 2rem;
   left: 50%;
+
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -66,7 +68,9 @@ button {
   padding: 0.4rem 0.4rem;
   font-size: 1.5rem;
   color: #fff;
-  position: relative;
+  /* position: relative; */
+  /* border: 1px solid black; */
+  width: 100%;
 }
 .modal-head h3 {
   color: #fff;
@@ -99,10 +103,11 @@ button {
   transform: scale(1.1);
 }
 .modal-main {
-  margin-top: -10%;
+  /* margin-top: -10%; */
   padding: 1.2rem 2.4rem 1rem 2.4rem;
   max-width: 580px;
   min-width: 500px;
+  /* border: 1px solid green; */
 }
 .modal-row {
   margin-bottom: 1.2rem;
@@ -290,8 +295,13 @@ button {
   background-color: #fff;
   border-radius: 0.6rem;
   overflow: hidden;
-  /* display: none; */
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   position: fixed;
+  /* width: 50%; */
   top: 2rem;
   left: 50%;
   -webkit-transform: translateX(-50%);

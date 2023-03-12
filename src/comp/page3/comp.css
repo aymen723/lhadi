@@ -1,6 +1,20 @@
-* {
-  /* Change your font family */
-  font-family: sans-serif;
+:root {
+  /* ===== Colors ===== */
+  --primary-color: #dcdcdc;
+  --panel-color: #fff;
+  --text-color: #000;
+  --black-light-color: #707070;
+  --border-color: #e6e5e5;
+  --toggle-color: #ddd;
+  --box1-color: #4da3ff;
+  --box2-color: #ffe6ac;
+  --box3-color: #e7d1fc;
+  --title-icon-color: #fff;
+
+  /* ====== Transition ====== */
+  --tran-05: all 0.5s ease;
+  --tran-03: all 0.3s ease;
+  --tran-03: all 0.2s ease;
 }
 .dash-content .boxes .box1 {
   display: flex;
@@ -10,7 +24,7 @@
   width: 100%;
 
   padding: 15px 20px;
-  /* background-color: var(--box1-color); */
+  /* background-color: var(--primary-color); */
   background-color: white;
   transition: var(--tran-05);
 }
@@ -52,4 +66,8 @@
 .content-table tbody tr.active-row {
   font-weight: bold;
   color: black;
+}
+.dashboard {
+  /* background-color: #4da3ff; */
+  height: 100vh;
 }

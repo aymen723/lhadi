@@ -1,101 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
+import Container from "../container/container";
 import "./comp.css";
+import axios from "axios";
+import CancelIcon from "@mui/icons-material/Cancel";
+import GroupAddIcon from "@mui/icons-material/GroupAdd";
 function Comp() {
+  const [table, settable] = useState();
+
+  // this function is to fetch the data from api and push it to the table
+  function fetchtabledata() {
+    axios.get(`https://Url`).then((res) => {
+      console.log(res.data);
+      settable(res.data);
+    });
+  }
   return (
-    <div>
-      <nav>
-        <div ClassName="logo-name">
-          <div ClassName="logo-image">
-            <img src="images/logo.png" alt=""></img>
-          </div>
+    <Container>
+      <section className="dashboard">
+        <div className="top">
+          <i className="uil uil-bars sidebar-toggle"></i>
 
-          <span ClassName="logo_name">CodingLab</span>
-        </div>
-
-        <div ClassName="menu-items">
-          <ul ClassName="nav-links">
-            <li>
-              <a href="#">
-                <i ClassName="uil uil-estate"></i>
-                <span ClassName="link-name">Dahsboard</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i ClassName="uil uil-files-landscapes"></i>
-                <span ClassName="link-name">Content</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i ClassName="uil uil-chart"></i>
-                <span ClassName="link-name">Analytics</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i ClassName="uil uil-thumbs-up"></i>
-                <span ClassName="link-name">Like</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i ClassName="uil uil-comments"></i>
-                <span ClassName="link-name">Comment</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i ClassName="uil uil-share"></i>
-                <span ClassName="link-name">Share</span>
-              </a>
-            </li>
-          </ul>
-
-          <ul ClassName="logout-mode">
-            <li>
-              <a href="#">
-                <i ClassName="uil uil-signout"></i>
-                <span ClassName="link-name">Logout</span>
-              </a>
-            </li>
-
-            <li ClassName="mode">
-              <a href="#">
-                <i ClassName="uil uil-moon"></i>
-                <span ClassName="link-name">Dark Mode</span>
-              </a>
-
-              <div ClassName="mode-toggle">
-                <span ClassName="switch"></span>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-      <section ClassName="dashboard">
-        <div ClassName="top">
-          <i ClassName="uil uil-bars sidebar-toggle"></i>
-
-          <div ClassName="search-box">
-            <i ClassName="uil uil-search"></i>
+          <div className="search-box">
+            <i className="uil uil-search"></i>
             <input type="text" placeholder="Search here..."></input>
           </div>
-
           <img src="images/profile.jpg" alt=""></img>
         </div>
-        <div ClassName="dash-content">
-          <div ClassName="overview">
-            <div ClassName="title">
-              <i ClassName="uil uil-list-ui-alt"></i>
-              <span ClassName="text">List of Historique</span>
+        <div className="dash-content">
+          <div className="overview">
+            <div className="title">
+              <i className="uil uil-list-ui-alt"></i>
+              <span className="text">List of Historique</span>
             </div>
 
-            <div ClassName="boxes">
-              <div ClassName="box box1">
-                <div ClassName="box1">
-                  <table ClassName="content-table">
+            <div className="boxes">
+              <div className="box box1">
+                <div className="box1">
+                  <table className="content-table">
                     <thead>
                       <tr>
                         <th>Rank</th>
@@ -113,34 +54,27 @@ function Comp() {
                         <td>88,110</td>
                         <td>dcode</td>
                         <td>
-                          <i ClassName="uil uil-user-check"></i>
+                          {/* <i className="uil uil-user-check"></i> */}
+                          <GroupAddIcon fontSize={"small"}></GroupAddIcon>
                         </td>
                         <td>
-                          <i ClassName="uil uil-times-circle"></i>
+                          {/* <i className="uil uil-times-circle"></i> */}
+                          <CancelIcon fontSize={"small"}></CancelIcon>
                         </td>
                       </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Sally</td>
-                        <td>72,400</td>
-                        <td>Students</td>
-                        <td>
-                          <i ClassName="uil uil-user-check"></i>
-                        </td>
-                        <td>
-                          <i ClassName="uil uil-times-circle"></i>
-                        </td>
-                      </tr>
+
                       <tr>
                         <td>3</td>
                         <td>Nick</td>
                         <td>52,300</td>
                         <td>dcode</td>
                         <td>
-                          <i ClassName="uil uil-user-check"></i>
+                          {/* <i className="uil uil-user-check"></i> */}
+                          <GroupAddIcon fontSize={"small"}></GroupAddIcon>
                         </td>
                         <td>
-                          <i ClassName="uil uil-times-circle"></i>
+                          {/* <i className="uil uil-times-circle"></i> */}
+                          <CancelIcon fontSize={"small"}></CancelIcon>
                         </td>
                       </tr>
                     </tbody>
@@ -151,7 +85,7 @@ function Comp() {
           </div>
         </div>
       </section>
-    </div>
+    </Container>
   );
 }
 
